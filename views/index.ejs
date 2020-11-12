@@ -1,0 +1,57 @@
+<html lang="en">
+<%- include("./partials/header.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+    <h2>All Songs</h2>
+    <div class= "songList">
+        <div class="title">
+            <h3>Title</h3>
+            <% if (songs.length > 0) { %>
+                <% songs.forEach(song => { %>
+                  <h4 class=""><%= song.title %></h4>
+                <% }) %>
+              <% } else { %>
+                <p>N/A</p>
+              <% } %>
+        </div>
+        <div class="band">
+            <h3>Artist</h3>
+            <% if (songs.length > 0) { %>
+                <% songs.forEach(song => { %>
+                  <h4 class=""><%= song.artist %></h4>
+                <% }) %>
+              <% } else { %>
+                <p>N/A</p>
+              <% } %>
+        </div>
+        <div class="genre">
+            <h3>Genre</h3>
+            <% if (songs.length > 0) { %>
+                <% songs.forEach(song => { %>
+                  <h4 class=""><%= song.genre %></h4>
+                <% }) %>
+              <% } else { %>
+                <p>N/A</p>
+              <% } %>
+        </div>
+        <div class="subgenre">
+            <h3>Subgenre</h3>
+            <% if (songs.length > 0) { %>
+                <% songs.forEach(song => { %>
+                  <h4 class=""><%= song.subgenre %></h4>
+                <% }) %>
+              <% } else { %>
+                <p>N/A</p>
+              <% } %>
+        </div>
+    </div>
+
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
